@@ -1,8 +1,12 @@
 const palindromes = function (text) {
 
+    const alphanumerical = 'abcdefghijklmnopqrstuvwxyz0123456789';
+
     let cleanText = text
         .toLowerCase()
-        .replace(/[^a-z0-9]/gi, "");
+        .split('')
+        .filter((c) => alphanumerical.includes(c))
+        .join('');
 
     let reverseText = cleanText.split("").reverse().join("");
 
